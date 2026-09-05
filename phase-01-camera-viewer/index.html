@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phase 1: Camera / Microphone Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Camera / Microphone Viewer</h1>
+
+  <section>
+    <label>
+      Camera:
+      <select id="cameraSelect"></select>
+    </label>
+    <label>
+      Microphone:
+      <select id="micSelect"></select>
+    </label>
+  </section>
+
+  <section>
+    <label>
+      Width:
+      <input id="widthInput" type="number" value="640" />
+    </label>
+    <label>
+      Height:
+      <input id="heightInput" type="number" value="480" />
+    </label>
+    <label>
+      FPS:
+      <input id="fpsInput" type="number" value="30" />
+    </label>
+    <button id="startButton">Start</button>
+  </section>
+
+  <video id="video" autoplay playsinline></video>
+
+  <h2>MediaStream / MediaStreamTrack Info</h2>
+  <pre id="infoOutput">(not started)</pre>
+
+  <script src="dist/main.js" type="module"></script>
+</body>
+</html>

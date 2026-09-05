@@ -1,0 +1,10 @@
+{
+  "name": "webrtc-learning",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
