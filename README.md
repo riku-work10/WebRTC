@@ -62,3 +62,4 @@ python3 tcp_client.py "hi"   # ターミナル2
 - Pythonは標準ライブラリのみでSocket / TCP / UDP / STUN / Signalingなどを担当
 - 各フェーズは「最小コード → 実行 → 観察 → 変更 → 再実行」で進める
 - コードを読んでから疑問点を掘り下げる。答えを先に大量に与えない
+- 動作確認・検証のたびに、必要になったLinuxコマンドをその場で学ぶ（一覧は[LINUX_COMMANDS.md](LINUX_COMMANDS.md)）
