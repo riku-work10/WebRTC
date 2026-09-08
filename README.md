@@ -7,8 +7,8 @@
 ## 進捗
 
 - [x] Phase 1: Browser Media API（Camera / Microphone Viewer）— `phase-01-camera-viewer/`
-- [ ] Phase 2: Video Frameを理解する
-- [ ] Phase 3: Python Socket
+- [x] Phase 2: Video Frameを理解する — `phase-02-video-frame/`
+- [x] Phase 3: Python Socket — `phase-03-python-socket/`
 - [ ] Phase 4: Packetを自作する
 - [ ] Phase 5: RTP / RTCP
 - [ ] Phase 6: NAT / UDP / Public IP
@@ -26,15 +26,34 @@
 - [ ] Phase 18: 最小WebRTCシステム
 - [ ] Phase 19: 最後にWebアプリ化
 
-## 実行方法（Phase 1）
+## 実行方法
 
 ```bash
-npm install       # tsc(TypeScriptコンパイラ)のみをインストール
-npm run build      # phase-01-camera-viewer/src/main.ts を dist/main.js にコンパイル
-cd phase-01-camera-viewer
-python3 -m http.server 8000
-# ブラウザで http://localhost:8000 を開く
+npm install         # tsc(TypeScriptコンパイラ)のみをインストール(最初の1回だけ)
+
+# Phase 1: Camera / Microphone Viewer
+npm run build:phase1
+cd phase-01-camera-viewer && python3 serve.py
+# ブラウザで http://localhost:8080 を開く
+
+# Phase 2: Video Frame
+npm run build:phase2
+cd phase-02-video-frame && python3 serve.py
+# ブラウザで http://localhost:8081 を開く
+
+# 全フェーズまとめてビルドしたい場合
+npm run build
+
+# Phase 3: Python Socket (ビルド不要、標準ライブラリのみ)
+cd phase-03-python-socket
+python3 udp_server.py &      # ターミナル1
+python3 udp_client.py "hi"   # ターミナル2
+
+python3 tcp_server.py &      # ターミナル1
+python3 tcp_client.py "hi"   # ターミナル2
 ```
+
+各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
 
 ## 方針
 

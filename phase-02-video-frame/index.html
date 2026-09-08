@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phase 2: Video Frame</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Video Frameを理解する</h1>
+
+  <section>
+    <label>
+      Width:
+      <input id="widthInput" type="number" value="640" />
+    </label>
+    <label>
+      Height:
+      <input id="heightInput" type="number" value="480" />
+    </label>
+    <label>
+      FPS:
+      <input id="fpsInput" type="number" value="30" />
+    </label>
+    <button id="startButton">Start</button>
+  </section>
+
+  <section class="views">
+    <div>
+      <h2>video要素(ブラウザが自動再生している映像)</h2>
+      <video id="video" autoplay playsinline muted></video>
+    </div>
+    <div>
+      <h2>canvas要素(自分でdrawImageし続けている映像)</h2>
+      <canvas id="canvas"></canvas>
+      <p>canvasをクリックすると、その位置のピクセルのRGB値を表示します。</p>
+    </div>
+  </section>
+
+  <section>
+    <p>configured frameRate(希望値): <span id="configuredFps">-</span></p>
+    <p>実際に描画できているFPS(実測値): <span id="actualFps">-</span></p>
+    <button id="grayscaleButton">canvasをグレースケール化する(1回だけ)</button>
+  </section>
+
+  <h2>Pixel / ImageData Info</h2>
+  <pre id="infoOutput">(not started)</pre>
+
+  <script src="dist/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.views {
+  align-items: flex-start;
+}
+
+video,
+canvas {
+  width: 320px;
+  background: #222;
+  cursor: crosshair;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

@@ -5,6 +5,8 @@
     "typescript": "^5.6.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build:phase1": "tsc -p phase-01-camera-viewer",
+    "build:phase2": "tsc -p phase-02-video-frame",
+    "build": "npm run build:phase1 && npm run build:phase2"
   }
 }
