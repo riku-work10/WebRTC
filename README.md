@@ -63,3 +63,7 @@ python3 tcp_client.py "hi"   # ターミナル2
 - 各フェーズは「最小コード → 実行 → 観察 → 変更 → 再実行」で進める
 - コードを読んでから疑問点を掘り下げる。答えを先に大量に与えない
 - 動作確認・検証のたびに、必要になったLinuxコマンドをその場で学ぶ（一覧は[LINUX_COMMANDS.md](LINUX_COMMANDS.md)）
+
+## 別トラック: Linux / Shell 学習
+
+WebRTCのフェーズ進行とは別に、シェル・シェルスクリプト自体の学習を[linux-shell/](linux-shell/)で進める（詳細は同ディレクトリの[README.md](linux-shell/README.md)を参照）。
