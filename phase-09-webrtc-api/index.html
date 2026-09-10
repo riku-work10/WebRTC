@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phase 9: WebRTC API (RTCPeerConnection)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>WebRTC API: RTCPeerConnection 最小構成</h1>
+  <p>同じページ内に pc1 / pc2 の2つのRTCPeerConnectionを作り、シグナリングサーバーを介さず直接offer/answer/candidateをやり取りする(ループバック)。</p>
+
+  <button id="startButton">カメラを取得してpc1→pc2へ接続開始</button>
+
+  <section>
+    <div>
+      <h2>pc1 (送信側)</h2>
+      <video id="localVideo" autoplay playsinline muted></video>
+    </div>
+    <div>
+      <h2>pc2 (受信側)</h2>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+  </section>
+
+  <h2>ログ(ICE candidate / 状態遷移 / SDP)</h2>
+  <pre id="logOutput">(not started)</pre>
+
+  <script src="dist/main.js" type="module"></script>
+</body>
+</html>

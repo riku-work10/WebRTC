@@ -7,6 +7,7 @@
   "scripts": {
     "build:phase1": "tsc -p phase-01-camera-viewer",
     "build:phase2": "tsc -p phase-02-video-frame",
-    "build": "npm run build:phase1 && npm run build:phase2"
+    "build:phase9": "tsc -p phase-09-webrtc-api",
+    "build": "npm run build:phase1 && npm run build:phase2 && npm run build:phase9"
   }
 }

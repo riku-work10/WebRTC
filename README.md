@@ -68,7 +68,7 @@
   1. ICE candidate(host/srflx/relay)の種類を調べる
   2. 複数candidateの中から接続性チェックで経路を選ぶ流れを追う
 
-### Phase 9: WebRTC API
+### Phase 9: WebRTC API ✅ — `phase-09-webrtc-api/`
 - 目的: ここまでの下位層知識を踏まえて、ブラウザの`RTCPeerConnection`が何を隠蔽しているかを理解する
 - 学習手順:
   1. `RTCPeerConnection`を最小構成で使い、Phase 1のMediaStreamを流してみる
@@ -184,6 +184,11 @@ python3 stun_client.py stun1.l.google.com 19302   # サーバーを変えて再�
 # Phase 8: ICE (ビルド不要、標準ライブラリのみ)
 cd phase-08-ice
 python3 ice_candidates.py   # host/srflx candidateを集め、優先度順にペアを並べる
+
+# Phase 9: WebRTC API (RTCPeerConnection)
+npm run build:phase9
+cd phase-09-webrtc-api && python3 serve.py
+# ブラウザで http://localhost:8082 を開き、ボタンを押してpc1→pc2のループバック接続を観察する
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
