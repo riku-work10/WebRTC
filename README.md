@@ -55,7 +55,7 @@
   3. `traceroute`で自分から相手までの経路(ルーター)を確認する
   4. NATがポート番号をどう書き換えるかを調べる
 
-### Phase 7: STUN
+### Phase 7: STUN ✅ — `phase-07-stun/`
 - 目的: NAT越しに自分のPublic IP/Portを知る仕組み(STUN)を最小実装で理解する
 - 学習手順:
   1. STUNプロトコルのメッセージフォーマットを調べる
@@ -175,6 +175,11 @@ python3 rtp_sender.py 10          # ターミナル2 (引数は送信フレー�
 cd phase-06-nat-public-ip
 python3 check_ip.py
 # 加えて `ifconfig`(mac)/`ip addr`(Linux)、`traceroute <宛先>` を手元で実行して比較する
+
+# Phase 7: STUN (ビルド不要、標準ライブラリのみ)
+cd phase-07-stun
+python3 stun_client.py                     # 公開STUNサーバー(stun.l.google.com)に問い合わせる
+python3 stun_client.py stun1.l.google.com 19302   # サーバーを変えて再確認
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
