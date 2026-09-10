@@ -1,0 +1,20 @@
+RTP receiver listening on 127.0.0.1:9003
+[decode] header bytes (12byte): 80e000000000000080ddb101
+[decode] version=2 marker=1 pt=96 seq=0 ts=0 ssrc=2162012417 payload=b'frame-0'
+[receiver] from ('127.0.0.1', 60562): seq=0 ts=0 ssrc=2162012417 pt=96 marker=1 payload=b'frame-0' (受信1個 / ロス0個)
+[decode] header bytes (12byte): 80e0000100000bb880ddb101
+[decode] version=2 marker=1 pt=96 seq=1 ts=3000 ssrc=2162012417 payload=b'frame-1'
+[receiver] 受信間隔=38.3ms
+[receiver] from ('127.0.0.1', 60562): seq=1 ts=3000 ssrc=2162012417 pt=96 marker=1 payload=b'frame-1' (受信2個 / ロス0個)
+[decode] header bytes (12byte): 80e000020000177080ddb101
+[decode] version=2 marker=1 pt=96 seq=2 ts=6000 ssrc=2162012417 payload=b'frame-2'
+[receiver] 受信間隔=38.5ms
+[receiver] from ('127.0.0.1', 60562): seq=2 ts=6000 ssrc=2162012417 pt=96 marker=1 payload=b'frame-2' (受信3個 / ロス0個)
+[decode] header bytes (12byte): 80e000030000232880ddb101
+[decode] version=2 marker=1 pt=96 seq=3 ts=9000 ssrc=2162012417 payload=b'frame-3'
+[receiver] 受信間隔=36.9ms
+[receiver] from ('127.0.0.1', 60562): seq=3 ts=9000 ssrc=2162012417 pt=96 marker=1 payload=b'frame-3' (受信4個 / ロス0個)
+[decode] header bytes (12byte): 80e0000400002ee080ddb101
+[decode] version=2 marker=1 pt=96 seq=4 ts=12000 ssrc=2162012417 payload=b'frame-4'
+[receiver] 受信間隔=35.5ms
+[receiver] from ('127.0.0.1', 60562): seq=4 ts=12000 ssrc=2162012417 pt=96 marker=1 payload=b'frame-4' (受信5個 / ロス0個)

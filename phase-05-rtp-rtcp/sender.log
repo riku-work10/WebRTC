@@ -1,0 +1,12 @@
+[sender] ssrc=2162012417 を使って5フレーム送信します
+[encode] header bytes (12byte): 80e000000000000080ddb101
+[encode] seq=0 ts=0 ssrc=2162012417 marker=1 pt=96
+[encode] header bytes (12byte): 80e0000100000bb880ddb101
+[encode] seq=1 ts=3000 ssrc=2162012417 marker=1 pt=96
+[encode] header bytes (12byte): 80e000020000177080ddb101
+[encode] seq=2 ts=6000 ssrc=2162012417 marker=1 pt=96
+[encode] header bytes (12byte): 80e000030000232880ddb101
+[encode] seq=3 ts=9000 ssrc=2162012417 marker=1 pt=96
+[encode] header bytes (12byte): 80e0000400002ee080ddb101
+[encode] seq=4 ts=12000 ssrc=2162012417 marker=1 pt=96
+[sender] 送信完了

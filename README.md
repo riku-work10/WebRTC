@@ -40,7 +40,7 @@
   3. ACKパケットを送り返す仕組みを作り、シーケンス番号のやり取りを観察する
   4. ネットワークバイトオーダー(ビッグエンディアン)がなぜ必要かを調べる
 
-### Phase 5: RTP / RTCP
+### Phase 5: RTP / RTCP — `phase-05-rtp-rtcp/`
 - 目的: 実際の音声/映像伝送プロトコルRTPのヘッダー構造を読み、なぜUDPの上に自作パケット(Phase 4)のような仕組みが必要なのかを理解する
 - 学習手順:
   1. RTPヘッダーの各フィールド(seq番号・timestamp・SSRCなど)を仕様書ベースで確認する
@@ -165,6 +165,11 @@ python3 tcp_client.py "hi"   # ターミナル2
 cd phase-04-custom-packet
 python3 packet_server.py &      # ターミナル1
 python3 packet_client.py "hi"   # ターミナル2
+
+# Phase 5: RTP / RTCP (ビルド不要、標準ライブラリのみ)
+cd phase-05-rtp-rtcp
+python3 rtp_receiver.py &         # ターミナル1
+python3 rtp_sender.py 10          # ターミナル2 (引数は送信フレーム数、省略時10)
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
