@@ -47,7 +47,7 @@
   2. Phase 4のパケットフォーマットをRTPヘッダーに近づけて自作する
   3. RTCPが何のための制御チャンネルかを調べる(統計・同期)
 
-### Phase 6: NAT / UDP / Public IP
+### Phase 6: NAT / UDP / Public IP ✅ — `phase-06-nat-public-ip/`
 - 目的: 自分のPCがPrivate IPを持ち、NATを介してPublic IPに変換される仕組みを体感する
 - 学習手順:
   1. `ifconfig`/`ip addr`でPrivate IPを確認する
@@ -170,6 +170,11 @@ python3 packet_client.py "hi"   # ターミナル2
 cd phase-05-rtp-rtcp
 python3 rtp_receiver.py &         # ターミナル1
 python3 rtp_sender.py 10          # ターミナル2 (引数は送信フレーム数、省略時10)
+
+# Phase 6: NAT / UDP / Public IP (ビルド不要、標準ライブラリのみ)
+cd phase-06-nat-public-ip
+python3 check_ip.py
+# 加えて `ifconfig`(mac)/`ip addr`(Linux)、`traceroute <宛先>` を手元で実行して比較する
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
