@@ -62,7 +62,7 @@
   2. 自作UDPクライアントから公開STUNサーバーにリクエストを送り、返ってきたPublic IP/Portを確認する
   3. NAT越えがなぜこれだけでは不十分な場合があるか(NATの種類)を調べる
 
-### Phase 8: ICE
+### Phase 8: ICE ✅ — `phase-08-ice/`
 - 目的: STUN/TURNの結果を使い、実際に通信可能な経路を選ぶICEの考え方を理解する
 - 学習手順:
   1. ICE candidate(host/srflx/relay)の種類を調べる
@@ -180,6 +180,10 @@ python3 check_ip.py
 cd phase-07-stun
 python3 stun_client.py                     # 公開STUNサーバー(stun.l.google.com)に問い合わせる
 python3 stun_client.py stun1.l.google.com 19302   # サーバーを変えて再確認
+
+# Phase 8: ICE (ビルド不要、標準ライブラリのみ)
+cd phase-08-ice
+python3 ice_candidates.py   # host/srflx candidateを集め、優先度順にペアを並べる
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
