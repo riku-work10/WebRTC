@@ -80,7 +80,7 @@
   1. `createOffer`/`createAnswer`で生成されたSDPを実際に出力して読む
   2. 各行(m=, a=など)が何を意味するか調べる
 
-### Phase 11: Signaling
+### Phase 11: Signaling ✅ — `phase-11-signaling/`
 - 目的: SDP/candidateを交換するためのシグナリングサーバーを自作し、WebRTC自体には仲介の仕組みが無いことを理解する
 - 学習手順:
   1. Python標準ライブラリのみでシンプルなシグナリングサーバー(WebSocketまたはHTTP polling)を実装する
@@ -194,6 +194,12 @@ cd phase-09-webrtc-api && python3 serve.py
 npm run build:phase10
 cd phase-10-sdp && python3 serve.py
 # ブラウザで http://localhost:8083 を開き、生成されたSDPと行ごとの注釈を見比べる
+
+# Phase 11: Signaling (ビルド不要、標準ライブラリのみ)
+cd phase-11-signaling
+python3 signaling_server.py &          # ターミナル1
+python3 signaling_client.py answerer & # ターミナル2 (先にofferを待つ)
+python3 signaling_client.py offerer    # ターミナル3
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。
