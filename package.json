@@ -8,6 +8,7 @@
     "build:phase1": "tsc -p phase-01-camera-viewer",
     "build:phase2": "tsc -p phase-02-video-frame",
     "build:phase9": "tsc -p phase-09-webrtc-api",
-    "build": "npm run build:phase1 && npm run build:phase2 && npm run build:phase9"
+    "build:phase10": "tsc -p phase-10-sdp",
+    "build": "npm run build:phase1 && npm run build:phase2 && npm run build:phase9 && npm run build:phase10"
   }
 }

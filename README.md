@@ -74,7 +74,7 @@
   1. `RTCPeerConnection`を最小構成で使い、Phase 1のMediaStreamを流してみる
   2. 内部でICE/DTLS/SRTPがどう呼ばれているかをログで追う
 
-### Phase 10: SDP
+### Phase 10: SDP ✅ — `phase-10-sdp/`
 - 目的: 2者間で通信条件(コーデック・ポート・candidateなど)を合意するためのテキスト形式SDPを読めるようにする
 - 学習手順:
   1. `createOffer`/`createAnswer`で生成されたSDPを実際に出力して読む
@@ -189,6 +189,11 @@ python3 ice_candidates.py   # host/srflx candidateを集め、優先度順にペ
 npm run build:phase9
 cd phase-09-webrtc-api && python3 serve.py
 # ブラウザで http://localhost:8082 を開き、ボタンを押してpc1→pc2のループバック接続を観察する
+
+# Phase 10: SDPを読む
+npm run build:phase10
+cd phase-10-sdp && python3 serve.py
+# ブラウザで http://localhost:8083 を開き、生成されたSDPと行ごとの注釈を見比べる
 ```
 
 各フェーズは `phase-XX-名前/` ディレクトリごとに独立しており、`tsconfig.json`は共通の`tsconfig.base.json`を継承している。`serve.py`は標準の`http.server`に`Cache-Control: no-cache`を追加した自作の簡易サーバー（詳細は各フェーズの`NOTES.md`を参照）。

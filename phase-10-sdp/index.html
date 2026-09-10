@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phase 10: SDPを読む</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>SDP(Session Description Protocol)を読む</h1>
+  <p>
+    <code>RTCPeerConnection.createOffer()</code>が生成する実際のSDPをそのまま表示し、
+    1行ずつどういう意味かを注釈する。実際の映像/音声のやり取りはせず、SDPの中身を読むことだけに集中する。
+  </p>
+
+  <button id="generateButton">Offerを生成してSDPを表示</button>
+
+  <div id="container">
+    <div>
+      <h2>生のSDP</h2>
+      <pre id="rawSdp">(未生成)</pre>
+    </div>
+    <div>
+      <h2>行ごとの注釈</h2>
+      <table id="annotatedTable">
+        <thead><tr><th>行</th><th>意味</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="dist/main.js" type="module"></script>
+</body>
+</html>
