@@ -1,0 +1,5 @@
+[encode] header bytes (7byte): 00000001010005
+[encode] payload bytes (5byte): b'hello'
+[decode] header bytes (7byte): 00000001020000
+[decode] seq=1 type=2 payload_len=0 payload=b''
+received ACK: seq=1 type=2 from ('127.0.0.1', 9002)

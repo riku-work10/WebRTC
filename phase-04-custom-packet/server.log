@@ -1,0 +1,6 @@
+Packet server listening on 127.0.0.1:9002
+[decode] header bytes (7byte): 00000001010005
+[decode] seq=1 type=1 payload_len=5 payload=b'hello'
+from ('127.0.0.1', 58104): seq=1 type=1 payload=b'hello'
+[encode] header bytes (7byte): 00000001020000
+[encode] payload bytes (0byte): b''
