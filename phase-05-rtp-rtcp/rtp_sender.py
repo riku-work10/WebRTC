@@ -23,6 +23,7 @@ timestamp = 0
 print(f"[sender] ssrc={ssrc} を使って{frame_count}フレーム送信します")
 
 for i in range(frame_count):
+    fは文字列にしている
     payload = f"frame-{i}".encode()
     marker = 1  # 1フレーム=1パケットなので毎回フレーム末尾扱い
     packet = encode(seq, timestamp, ssrc, payload, payload_type=PT_DYNAMIC, marker=marker)
